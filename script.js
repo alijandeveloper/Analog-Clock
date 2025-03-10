@@ -24,3 +24,13 @@ function updateClock() {
     digitalTime.textContent = now.toLocaleTimeString();
     dateDisplay.textContent = now.toDateString();
 }
+
+// Dark/Light Mode Toggle
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    themeToggle.textContent = body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
+});
+
+// Update clock every second
+setInterval(updateClock, 1000);
+updateClock();
