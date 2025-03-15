@@ -1,100 +1,84 @@
-/* General Styles */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to right, #83060a, #076e47);
-    transition: background 0.5s ease;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     font-family: Arial, sans-serif;
     flex-direction: column;
+    transition: background 0.5s ease-in-out;
 }
-
-/* Clock Container */
-.container {
-    text-align: center;
-}
-
 .clock {
-    width: 200px;
-    height: 200px;
-    border: 5px solid white;
+    width: 250px;
+    height: 250px;
+    border: 8px solid rgb(236, 213, 213);
     border-radius: 50%;
     position: relative;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
-
-/* Hands */
 .hand {
     position: absolute;
-    width: 50%;
-    height: 4px;
-    background: black;
-    top: 50%;
-    transform-origin: 100%;
+    bottom: 50%;
+    background: white;
+    transform-origin: bottom;
     transform: rotate(90deg);
-    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+    transition: transform 0.05s linear;
     border-radius: 5px;
 }
-
-.hour-hand { width: 40%; height: 6px; background: black; }
-.minute-hand { width: 45%; height: 4px; background: black; }
-.second-hand { width: 50%; height: 2px; background: red; }
-
-/* Center Circle */
+.hour-hand { width: 6px; height: 60px; background: white; }
+.minute-hand { width: 4px; height: 80px; background: #ddd; }
+.second-hand { width: 2px; height: 100px; background: red; }
 .center-circle {
-    width: 10px;
-    height: 10px;
-    background: black;
+    width: 12px;
+    height: 12px;
+    background: white;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 50%;
 }
-
-/* Numbers */
+.numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .numbers span {
     position: absolute;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
 }
-
-.num1 { top: 15%; left: 73%; }
-.num2 { top: 32%; left: 87%; }
-.num3 { top: 50%; left: 92%; }
-.num4 { top: 68%; left: 87%; }
-.num5 { top: 85%; left: 73%; }
-.num6 { top: 90%; left: 50%; }
-.num7 { top: 85%; left: 25%; }
-.num8 { top: 68%; left: 10%; }
+.num1 { top: 12%; left: 73%; }
+.num2 { top: 28%; left: 88%; }
+.num3 { top: 50%; left: 93%; }
+.num4 { top: 72%; left: 88%; }
+.num5 { top: 88%; left: 73%; }
+.num6 { top: 93%; left: 50%; }
+.num7 { top: 88%; left: 25%; }
+.num8 { top: 72%; left: 10%; }
 .num9 { top: 50%; left: 5%; }
-.num10 { top: 32%; left: 10%; }
-.num11 { top: 15%; left: 25%; }
-.num12 { top: 8%; left: 50%; }
-
-/* Digital Time */
+.num10 { top: 28%; left: 10%; }
+.num11 { top: 12%; left: 25%; }
+.num12 { top: 5%; left: 50%; }
 .digital-time {
     font-size: 24px;
-    margin-top: 15px;
     color: white;
-    font-weight: bold;
+    margin-top: 15px;
 }
-
-/* Date Display */
 .date-display {
     font-size: 18px;
     color: white;
     margin-top: 5px;
 }
-
-/* Theme Toggle */
 #theme-toggle {
     margin-top: 15px;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border: none;
     background: white;
     color: black;
@@ -103,25 +87,19 @@ body {
     border-radius: 5px;
     transition: 0.3s;
 }
-
 #theme-toggle:hover {
     background: black;
     color: white;
 }
-
-/* Dark Mode */
 .dark-mode {
     background: linear-gradient(to right, #232526, #414345);
 }
-
 .dark-mode .clock {
     border-color: black;
 }
-
 .dark-mode .hand {
     background: white;
 }
-
 .dark-mode .center-circle {
     background: white;
 }
